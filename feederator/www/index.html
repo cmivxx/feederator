@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Side Menu and Navigation: Nightly</title>
-    
-    
-    
-    
-        <link rel="stylesheet" href="css/style.css">
-
-    
-    
-    
-  </head>
-
-  <body>
-
-    <html ng-app="ionicApp">
+<html ng-app="ionicApp">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
-    <title>Side Menus</title>
+    <title>Feederator</title>
 
-    <link href="http://code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-    <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+    <script src="js/index.js"></script>
   </head>
 
   <body ng-controller="MainCtrl">
@@ -46,7 +34,7 @@
           </ion-nav-bar>
 
           <ion-nav-view name="menuContent"></ion-nav-view>
-        </ion-side-menu-content> 
+        </ion-side-menu-content>
 
         <ion-side-menu side="left">
           <ion-header-bar class="bar-assertive">
@@ -65,10 +53,18 @@
     </script>
 
     <script id="templates/home.html" type="text/ng-template">
-      <ion-view view-title="Welcome">
-        <ion-content class="padding">
-          <p>Swipe to the right to reveal the left menu.</p>
-          <p>(On desktop click and drag from left to right)</p>
+      <ion-view view-title="Feederator">
+        <ion-content class="feedList padding">
+
+          <div class="feed" ng-repeat="feed in ifeeds.feeds">
+          		<div class="feedTitle">{{feed.name}}</div>
+            	<ul class="feedItems">
+				<li class="feedItem" ng-repeat="entry in feed.entries.responseData.feed.entries">
+                			<a href="{{entry.link}}"  onclick="window.open(this.href, '_system', 'location=yes');return false;">{{entry.title}}</a>
+              		</li>
+              	</ul>
+          </div>
+
         </ion-content>
       </ion-view>
     </script>
@@ -106,7 +102,7 @@
           </form>
 
           <div ng-hide="showForm">
-            <pre ng-bind="attendee | json"></pre> 
+            <pre ng-bind="attendee | json"></pre>
             <a href="#/event/attendees">View attendees</a>
           </div>
         </ion-content>
@@ -134,13 +130,5 @@
       </ion-view>
     </script>
 
-  </body>
-</html>
-    
-        <script src="js/index.js"></script>
-
-    
-    
-    
   </body>
 </html>
