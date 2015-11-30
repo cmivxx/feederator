@@ -9090,7 +9090,8 @@ body {
   .feedList .feed {
     background-color: #fff;
     padding: 2em;
-    border: 2px solid #c4c4c4;
+    border: 0px solid #c4c4c4;
+    box-shadow: 0px 0px 6px #888;
     margin-bottom: 2em; }
     .feedList .feed .feedTitle {
       font-size: 1.5em;

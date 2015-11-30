@@ -3,12 +3,12 @@ angular.module('ionicApp', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('eventmenu', {
-      url: "/event",
+    .state('menu', {
+      url: "/menu",
       abstract: true,
-      templateUrl: "templates/event-menu.html"
+      templateUrl: "templates/menu.html"
     })
-    .state('eventmenu.home', {
+    .state('menu.home', {
       url: "/home",
       views: {
         'menuContent' :{
@@ -17,7 +17,7 @@ angular.module('ionicApp', ['ionic'])
         }
       }
     })
-    .state('eventmenu.checkin', {
+    .state('menu.checkin', {
       url: "/check-in",
       views: {
         'menuContent' :{
@@ -26,7 +26,7 @@ angular.module('ionicApp', ['ionic'])
         }
       }
     })
-    .state('eventmenu.attendees', {
+    .state('menu.attendees', {
       url: "/attendees",
       views: {
         'menuContent' :{
@@ -36,31 +36,31 @@ angular.module('ionicApp', ['ionic'])
       }
     })
 
-  $urlRouterProvider.otherwise("/event/home");
+  $urlRouterProvider.otherwise("/menu/home");
 })
 
 .controller('HomeCtrl', function($scope, $http, $ionicSideMenuDelegate) {
-  console.log("in home controller");
-  var feeds = {};
-  var feed_id = 0;
-  $http.get('http://oapi.cmivxx.com/v2/feeds').success(function(data) {
-  //$http.get('feedList.json').success(function(data) {
+	console.log("in home controller");
+	var feeds = {};
+	var feed_id = 0;
+	//$http.get('http://oapi.cmivxx.com/v2/feeds').success(function(data) {
+	$http.get('feedList.json').success(function(data) {
 		feeds.content = data;
 		$scope.ifeeds = data;
-  }).error(function(data) {
+	}).error(function(data) {
 		console.log("houston, we have a problem...");
-  }).then(function(data) {
-    angular.forEach(feeds.content.feeds, function(feed_inf, key) {
-		$http.get("http://ajax.googleapis.com/ajax/services/feed/load", { params: { "v": "1.0", "num": "10", "q": feed_inf.rss } }).success(function(fdata) {
-		//$http.get("sampleFeed.json", { params: { "v": "1.0", "limit": "10", "q": feed_inf.rss } }).success(function(fdata) {
-			$scope.ifeeds.feeds[key].entries = fdata;
-      }).error(function(fdata) {
-			console.log("houston, we have a different problem...");
-      }).then(function(fdata) {
-			feed_id++;
-      })
-    })
-  })
+	}).then(function(data) {
+		angular.forEach(feeds.content.feeds, function(feed_inf, key) {
+			//$http.get("http://ajax.googleapis.com/ajax/services/feed/load", { params: { "v": "1.0", "num": "10", "q": feed_inf.rss } }).success(function(fdata) {
+			$http.get("sampleFeed.json", { params: { "v": "1.0", "limit": "10", "q": feed_inf.rss } }).success(function(fdata) {
+				$scope.ifeeds.feeds[key].entries = fdata;
+      		}).error(function(fdata) {
+				console.log("houston, we have a different problem...");
+      		}).then(function(fdata) {
+				feed_id++;
+      		})
+    		})
+  	})
 })
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
