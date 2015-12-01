@@ -9082,8 +9082,147 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+/*  Open Sans  */
+@font-face {
+  font-family: 'OS';
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: italic;
+  font-weight: 400;
+  src: url("fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: normal;
+  font-weight: 800;
+  src: url("fonts/Open_Sans/OpenSans-ExtraBold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: italic;
+  font-weight: 800;
+  src: url("fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Open_Sans/OpenSans-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: italic;
+  font-weight: 700;
+  src: url("fonts/Open_Sans/OpenSans-BoldItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/Open_Sans/OpenSans-Semibold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: italic;
+  font-weight: 600;
+  src: url("fonts/Open_Sans/OpenSans-SemiboldItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/Open_Sans/OpenSans-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'OS';
+  font-style: italic;
+  font-weight: 300;
+  src: url("fonts/Open_Sans/OpenSans-LightItalic.ttf") format("truetype"); }
+
+/*  Roboto  */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/Roboto/Roboto-Thin.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  src: url("fonts/Roboto/Roboto-Thinitalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/Roboto/Roboto-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: url("fonts/Roboto/Roboto-LightItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Roboto/Roboto-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url("fonts/Roboto/Roboto-Italic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/Roboto/Roboto-Medium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url("fonts/Roboto/Roboto-MediumItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Roboto/Roboto-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url("fonts/Roboto/Roboto-BoldItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/Roboto/Roboto-Black.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url("fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype"); }
+
 body {
   background-color: #ccc; }
+
+.bar.bar-positive {
+  border-color: #3ab4a6;
+  background-color: #3ab4a6;
+  background-image: linear-gradient(0deg, #3ab4a6, #3ab4a6 50%, transparent 50%); }
 
 .feedList {
   background-color: #E8E8E8; }
@@ -9095,6 +9234,9 @@ body {
     margin-bottom: 2em; }
     .feedList .feed .feedTitle {
       font-size: 1.5em;
+      font-family: Roboto;
+      font-weight: 300;
+      color: #3ab4a6;
       margin-bottom: 1em; }
     .feedList .feed .feedItems {
       list-style: inherit;
@@ -9104,6 +9246,7 @@ body {
         .feedList .feed .feedItems .feedItem a {
           text-decoration: none;
           color: #000;
-          font-weight: 200; }
+          font-weight: 300;
+          font-family: OS; }
       .feedList .feed .feedItems .feedItem:last-child {
         margin-bottom: 0; }

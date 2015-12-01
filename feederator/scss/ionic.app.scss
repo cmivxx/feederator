@@ -21,8 +21,17 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+// Include Base Sets
+@import "scss/modules/fonts.scss";
+
 body {
     background-color: #ccc;
+}
+
+.bar.bar-positive {
+    border-color: #3ab4a6;
+    background-color: #3ab4a6;
+    background-image: linear-gradient(0deg, #3ab4a6, #3ab4a6 50%, transparent 50%);
 }
 
 .feedList {
@@ -35,6 +44,9 @@ body {
         margin-bottom: 2em;
         .feedTitle {
             font-size: 1.5em;
+            font-family: Roboto;
+            font-weight: 300;
+            color: #3ab4a6;
             margin-bottom: 1em;
         }
         .feedItems {
@@ -45,7 +57,8 @@ body {
                 a {
                     text-decoration: none;
                     color: #000;
-                    font-weight: 200;
+                    font-weight: 300;
+                    font-family: OS;
                 }
             }
             .feedItem:last-child {
