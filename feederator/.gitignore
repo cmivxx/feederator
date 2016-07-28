@@ -1,6 +1,38 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+# Various IDE &#038; OS files that should never be committed
+.DS_Store
+*.swp
+*.lock
+__MACOSX
+.idea
+/nbproject/*
+.project
+.buildpath
+.thumbs
+Thumbs.db
+build.properties
+.project
+.settings
+.vagrant
+.buildpath
+/_notes/*
+*~
+
+*.log
+*.swp
+.installed.cfg
+bin
+develop-eggs
+parts
+
+# generated files
 node_modules/
 platforms/
 plugins/
+ant-build
+www/lib
+www/.ctags
+ionic.app.css
+ionic.app.min.css
