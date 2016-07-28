@@ -17,11 +17,27 @@
       <h1 class="title">Left</h1>
     </ion-header-bar>
     <ion-content>
-      <ion-list>
+
+      <ion-list ng-show="isMobile == true">
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/search1">
+          Search
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+      </ion-list>
+
+      <ion-list ng-show="isMobile != true">
         <ion-item ng-click="login()">
           Login
         </ion-item>
-        <ion-item href="#/app/search">
+        <ion-item href="#/app/search2">
           Search
         </ion-item>
         <ion-item href="#/app/browse">
@@ -31,6 +47,7 @@
           Playlists
         </ion-item>
       </ion-list>
+
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

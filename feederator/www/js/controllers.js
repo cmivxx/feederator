@@ -2,12 +2,12 @@ angular.module('feederator.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
 	$scope.$on('$ionicView.enter', function() {
-		console.log("View Changed")
-		// console.log("Width: " + window.screen.availWidth)
-		console.log("Width: " + window.innerWidth)
-		if ((window.innerWidth < 768) && ($ionicSideMenuDelegate.isOpenRight())) {
-			$ionicSideMenuDelegate.toggleRight();
-			console.log("shit be closed");
+		if (window.innerWidth < 768) {
+			$scope.isMobile = true;
+			console.log("isMobile = true");
+		} else {
+			$scope.isMobile = false;
+			console.log("isMobile = false");
 		}
 	})
 
